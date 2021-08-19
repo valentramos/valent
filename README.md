@@ -1,2 +1,2 @@
 # valentramos
-Primer sitio web de marca personal "Valent Ramos"
+Sitio web de marca personal "Valent" de Ignacio Ramos
