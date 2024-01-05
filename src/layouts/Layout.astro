@@ -1,0 +1,76 @@
+---
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+const { title } = Astro.props;
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="stylesheet" href="https://use.typekit.net/lgx2adh.css">
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Valent - Astro</title>
+	</head>
+  <body class="bg-white dark:bg-black">
+	<Header/>
+    <main>
+        <slot />
+    </main>
+    <Footer />
+    <script is:inline src="/js/flowbite.min.js"></script>
+  </body>
+</html>
+
+<script>
+    // const btn = document.getElementById('toggleTheme');
+    // btn.addEventListener('click', () => {
+    //   document.documentElement.classList.toggle('dark');
+    //   btn.textContent = document.documentElement.classList.contains('dark') ? 'Cambiar a Modo Claro' : 'Cambiar a Modo Oscuro';
+    // });
+
+    const suinIcon = document.querySelector(".sun");
+    const moonIcon = document.querySelector(".moon");
+    const userTheme = localStorage.getItem("theme");
+    const systemTheme = window.matchMedia("prefers-color-scheme: dark").matches;
+    const iconToggle = () => {
+        moonIcon?.classList.toggle("display-none");
+        suinIcon?.classList.toggle("display-none");
+    }
+    const themeCheck = () => {
+        if (userTheme === "dark" || (!userTheme && systemTheme)) {
+            document.documentElement.classList.add("dark");
+            moonIcon?.classList.add("display-none");
+            return;
+        }
+        suinIcon?.classList.add("display-none");
+    }
+    const themeSwitch = () => {
+        if (document.documentElement.classList.contains("dark")) {
+            document.documentElement.classList.remove("dark");
+            localStorage.setItem("theme", "light");
+            iconToggle();
+            return;
+        }
+        document.documentElement.classList.add("dark");
+        localStorage.setItem("theme", "dark");
+        iconToggle();
+    }
+    suinIcon?.addEventListener("click", () => {
+        themeSwitch();
+    });
+    moonIcon?.addEventListener("click", () => {
+        themeSwitch();
+    });
+    themeCheck();
+</script>
+
+<style is:global>
+	html {
+		font-family: museo-sans, sans-serif;
+	}
+    .display-none {
+        display: none;
+    }
+</style>
