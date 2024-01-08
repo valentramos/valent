@@ -1,0 +1,25 @@
+---
+// Importa el componente para cada ítem individual
+import FaqsItem from './FaqsItem.astro';
+
+export interface FAQSectionProps {
+  faqs: Array<{ id: number; question: string; answer: string }>;
+}
+
+const { faqs } = Astro.props as FAQSectionProps;
+---
+
+<section class="container mx-auto my-16" id="accordion-open" data-accordion="open">
+  <h5 class="mb-5 text-2xl text-center font-bold dark:text-white">
+    ¿Preguntas? Tenemos respuestas.
+  </h5>
+
+  {faqs.map((faq) => (
+    <FaqsItem 
+      key={faq.id}
+      question={faq.question} 
+      answer={faq.answer} 
+      id={faq.id} 
+    />
+  ))}
+</section>

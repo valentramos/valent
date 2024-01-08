@@ -1,0 +1,58 @@
+---
+export interface ImageProps {
+    img1: string;
+    img2: string;
+    img3: string;
+    img4: string;
+    img5: string;
+    img6: string;
+}
+
+const { img1, img2, img3, img4, img5, img6 } = Astro.props as ImageProps;
+---
+<section class="container mx-auto my-16">
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+        <div>
+            <img
+                class="h-auto max-w-full rounded-md animated-img"
+                src={img1}
+                alt="valent"
+            />
+        </div>
+        <div>
+            <img
+                class="h-auto max-w-full rounded-md animated-img"
+                src={img2}
+                alt="valent"
+            />
+        </div>
+        <div>
+            <img
+                class="h-auto max-w-full rounded-md animated-img"
+                src={img3}
+                alt="valent"
+            />
+        </div>
+        <div>
+            <img
+                class="h-auto max-w-full rounded-md animated-img"
+                src={img4}
+                alt="valent"
+            />
+        </div>
+        <div>
+            <img
+                class="h-auto max-w-full rounded-md animated-img"
+                src={img5}
+                alt="valent"
+            />
+        </div>
+        <div>
+            <img
+                class="h-auto max-w-full rounded-md animated-img"
+                src={img6}
+                alt="valent"
+            />
+        </div>
+    </div>
+</section>
