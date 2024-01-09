@@ -1,6 +1,7 @@
 ---
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import Analytics from "../components/Analytics.astro";
 const { title } = Astro.props;
 ---
 
@@ -11,16 +12,18 @@ const { title } = Astro.props;
 		<link rel="stylesheet" href="https://use.typekit.net/lgx2adh.css">
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Valent - Astro</title>
+		<title>Valent</title>
+        <Analytics/>
 	</head>
-  <body class="bg-white dark:bg-black">
-	<Header/>
-    <main>
-        <slot />
-    </main>
-    <Footer />
-    <script is:inline src="/js/flowbite.min.js"></script>
-  </body>
+    
+    <body class="bg-white dark:bg-black">
+        <Header/>
+        <main>
+            <slot />
+        </main>
+        <Footer />
+        <script is:inline src="/js/flowbite.min.js"></script>
+    </body>
 </html>
 
 <script>
