@@ -13,14 +13,7 @@ const { title } = Astro.props;
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<title>Valent</title>
-        <!-- Google tag (gtag.js) -->
-        <script type="partytown" async src="https://www.googletagmanager.com/gtag/js?id=G-HWTMDYD535"></script>
-        <script type="partytown">
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-HWTMDYD535');
-        </script>
+        <Analytics/>
 	</head>
     
     <body class="bg-white dark:bg-black">
