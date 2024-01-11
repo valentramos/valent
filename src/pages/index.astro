@@ -3,13 +3,21 @@ import Layout from "../layouts/Layout.astro";
 import Banner from "../components/Banner.astro";
 import faqs from "../data/faqs.json";
 import FaqsSection from "../components/FaqsSection.astro";
+
 import Gallery from "../components/Gallery.astro"
+import { Image } from 'astro:assets';
+
 
 const servicio = "prototipado";
 const preguntasParaServicio = faqs[servicio];
 ---
 
-<Layout title="Inicio">
+<Layout 
+	title="Prototipado" 
+	description="Servicios de prototipado de alta calidad para productos digitales, ayudando a transformar tus ideas en prototipos funcionales y atractivos."
+	keywords="prototipado de productos digitales, desarrollo de prototipos, diseño de productos, UX, UI"
+	>
+	
 	<Banner
 		title="Prototipa tus Ideas"
 		subtitle="Aplicaciones móviles, sitios web, landing-pages, dashboards y más!"
@@ -18,14 +26,14 @@ const preguntasParaServicio = faqs[servicio];
 	/>
 
 	<section class="container mx-auto my-16 text-center">
-		<h5 class="mb-2 text-2xl font-bold dark:text-white">
+		<h2 class="mb-2 text-2xl font-bold dark:text-white">
 			Un prototipo ahorra incontables reuniones y previene costosos
 			errores de inversión.
-		</h5>
+		</h2>
 		<a
 			href="https://www.pinterest.es/valentramos"
 			target="_blank"
-			class="inline-flex items-center font-medium text-blue-500 hover:underline"
+			class="inline-flex text-2xl items-center font-medium text-blue-500 hover:underline"
 		>
 			Ver portafolio
 			<svg
@@ -50,13 +58,13 @@ const preguntasParaServicio = faqs[servicio];
 			class="grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 items-center"
 		>
 			<div class="m-auto p-10">
-				<img
+				<Image
 					class="h-auto max-w-full rounded-md animated-img"
 					src="/img/prototype/bolivar.png"
-					alt=""
+					alt="Captura de pantalla prototipo"
+					width={1280}
+					height={800}
 				/>
-				<!-- <iframe class="rounded-xl animated-banner" width="200" height="427" src="https://xd.adobe.com/embed/b479169f-c677-4ea7-bef0-febf0a7d4558-e12a/?fullscreen&hints=off" frameborder="0" allowfullscreen></iframe> -->
-				<!-- <iframe class="rounded-xl" width="195" height="422" src="https://xd.adobe.com/embed/18b7fea6-ca75-4a78-b199-6b2c35350673-4de4/" frameborder="0" allowfullscreen></iframe> -->
 			</div>
 			<div>
 				<h5
@@ -83,14 +91,16 @@ const preguntasParaServicio = faqs[servicio];
 		</div>
 	</section>
 
-	<Gallery
-		img1="/img/prototype/bolivar.png"
-		img2="/img/prototype/capcem.png"
-		img3="/img/prototype/cies.png"
-		img4="/img/prototype/dobo.png"
-		img5="/img/prototype/oit.png"
-		img6="/img/prototype/utha.png"
-	/>
+	<!-- <Gallery images={images} /> -->
+
+	<Gallery>
+		<Image src="/img/prototype/bolivar.png" width={1280} height={800} alt="Descripción de la imagen 1" class="h-auto max-w-full rounded-md animated-img" />
+		<Image src="/img/prototype/capcem.png" width={1280} height={800} alt="Descripción de la imagen 1" class="h-auto max-w-full rounded-md animated-img" />
+		<Image src="/img/prototype/cies.png" width={1280} height={800} alt="Descripción de la imagen 1" class="h-auto max-w-full rounded-md animated-img" />
+		<Image src="/img/prototype/dobo.png" width={1280} height={800} alt="Descripción de la imagen 1" class="h-auto max-w-full rounded-md animated-img" />
+		<Image src="/img/prototype/oit.png" width={1280} height={800} alt="Descripción de la imagen 1" class="h-auto max-w-full rounded-md animated-img" />
+		<Image src="/img/prototype/utha.png" width={1280} height={800} alt="Descripción de la imagen 1" class="h-auto max-w-full rounded-md animated-img" />
+	</Gallery>
 
 	<FaqsSection faqs={preguntasParaServicio} />
 

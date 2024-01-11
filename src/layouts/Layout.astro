@@ -2,7 +2,6 @@
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import Analytics from "../components/Analytics.astro";
-const { title } = Astro.props;
 ---
 
 <html lang="en">
@@ -12,7 +11,11 @@ const { title } = Astro.props;
 		<link rel="stylesheet" href="https://use.typekit.net/lgx2adh.css">
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Valent</title>
+        
+        <title>Valent | {Astro.props.title || 'IG'}</title>
+        <meta name="description" content={Astro.props.description || 'Sitio web personal, servicios de prototipado, diseño y desarrollo'} />
+        <meta name="keywords" content={Astro.props.keywords || 'PM, Product design, Web design, UI, UX, Adobe XD, Astro, Angular, Wordpress '}>
+
         <Analytics/>
 	</head>
     
@@ -27,12 +30,6 @@ const { title } = Astro.props;
 </html>
 
 <script>
-    // const btn = document.getElementById('toggleTheme');
-    // btn.addEventListener('click', () => {
-    //   document.documentElement.classList.toggle('dark');
-    //   btn.textContent = document.documentElement.classList.contains('dark') ? 'Cambiar a Modo Claro' : 'Cambiar a Modo Oscuro';
-    // });
-
     const suinIcon = document.querySelector(".sun");
     const moonIcon = document.querySelector(".moon");
     const userTheme = localStorage.getItem("theme");
