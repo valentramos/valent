@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.3.4",
+    "@astrojs/partytown": "^2.0.3",
     "@astrojs/tailwind": "^5.1.0",
     "@supabase/supabase-js": "^2.39.3",
     "astro": "^4.0.9",

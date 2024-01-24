@@ -1,15 +1,30 @@
 ---
-import Layout from "../layouts/Layout.astro";
+import Clean from "../layouts/Clean.astro";
 ---
 
-<Layout title="Register">
-    <h1>Register</h1>
-    <p>Already have an account? <a href="/signin">Sign in</a></p>
-    <form action="/api/auth/register" method="post">
-        <label for="email" for="email">Email</label>
-        <input type="email" name="email" id="email" />
-        <label for="password">Password</label>
-        <input type="password" name="password" id="password" />
-        <button type="submit">Login</button>
-    </form>
-</Layout>
+<Clean title="Registro">
+    <section>
+		<div class="container-fluid">
+			<div class="h-screen flex justify-center items-center 2xl:px-0 px-5">
+                <div class="w-full max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700">
+                    <img class="w-24 h-24 mb-10 m-auto" src="/favicon.svg" alt="Valent image"/>
+                    <h1 class="text-xl font-medium text-gray-900 dark:text-white text-center mb-10">Registro</h1>
+                    <form action="/api/auth/register" method="post" class="space-y-6">
+                        <div>
+                            <label for="email" for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Correo electrónico:</label>
+                            <input type="email" name="email" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"/>
+                        </div>
+                        <div>
+                            <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Contraseña:</label>
+                            <input type="password" name="password" id="password" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"/>
+                        </div>
+                        <button type="submit" class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Registrarse</button>
+                        <div class="text-sm font-medium text-gray-500 dark:text-gray-300">
+                            ¿Posees una cuenta? <a href="/signin" class="text-blue-700 hover:underline dark:text-blue-500">Iniciar sesión</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+</Clean>

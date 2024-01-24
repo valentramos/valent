@@ -1,0 +1,36 @@
+{
+    "prototipado": [
+        {
+            "id": 1,
+            "question": "¿Qué es exactamente un prototipo y cómo puede beneficiar a mi proyecto?",
+            "answer": "Un prototipo es una representación funcional y visual de tu producto digital antes de su desarrollo completo. Te permite visualizar y probar aspectos clave como el diseño, la usabilidad y la funcionalidad, lo que facilita la toma de decisiones informadas, ahorra tiempo y reduce costos potenciales al identificar y solucionar problemas desde el principio."
+        },
+        {
+            "id": 2,
+            "question": "¿Cuánto tiempo tarda en desarrollarse un prototipo?",
+            "answer": "El tiempo de desarrollo de un prototipo puede variar dependiendo de la complejidad del proyecto y de tus requisitos específicos. Generalmente, puede tomar desde unas pocas semanas hasta un par de meses. Trabajaremos estrechamente contigo para establecer un cronograma realista y eficiente."
+        },
+        {
+            "id": 3,
+            "question": "¿Puedo participar en el proceso de prototipado?",
+            "answer": "Absolutamente. Valoramos tu participación y feedback durante todo el proceso de prototipado. Tu conocimiento y visión del proyecto son fundamentales para asegurarnos de que el prototipo cumpla con tus expectativas y objetivos."
+        },
+        {
+            "id": 4,
+            "question": "¿Qué nivel de detalle puedo esperar en el prototipo?",
+            "answer": "El nivel de detalle dependerá de tus necesidades y del objetivo del prototipo. Puede variar desde un diseño básico de alta fidelidad que muestra la apariencia y el flujo del usuario, hasta un prototipo completamente interactivo con funcionalidades casi completas."
+        },
+        {
+            "id": 5,
+            "question": "¿Qué pasa si necesito realizar cambios en el prototipo?",
+            "answer": "Los cambios son una parte normal y esperada del proceso de ™¡prototipado. Estamos preparados para realizar ajustes basados en tus comentarios y en los resultados de las pruebas de usuario para asegurarnos de que el prototipo final cumpla con todas tus necesidades."
+        },
+        {
+            "id": 6,
+            "question": "¿Puedo usar el prototipo para presentaciones o pitches a inversores?",
+            "answer": "Sí, los prototipos son herramientas excelentes para presentaciones y pitches, ya que permiten a los inversores y otras partes interesadas entender mejor tu concepto y visualizar el producto final."
+        }
+    ],
+    "productoY": [
+    ]
+}
