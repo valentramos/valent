@@ -6,6 +6,7 @@ import partytown from "@astrojs/partytown";
 export default defineConfig({
   integrations: [tailwind(), partytown()],
   site: 'https://valentramos.com',
-  output: 'server',
+  // output: 'server',
+  output: 'static',
   // base: 'valent-astro',
 });
