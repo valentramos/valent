@@ -7,6 +7,6 @@ export default defineConfig({
   integrations: [tailwind(), partytown()],
   site: 'https://valentramos.com',
   // output: 'server',
-  output: 'static',
+  // output: 'static',
   // base: 'valent-astro',
 });
