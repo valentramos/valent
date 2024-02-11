@@ -9,7 +9,7 @@ const { title, description, keywords, image} = Astro.props;
 <html lang="en">
 	<BaseHead title={title} description={description} keywords={keywords} image={image} />
     
-    <body class="bg-white dark:bg-black">
+    <body class="bg-white dark:bg-black p-4 sm:p-0">
         <Header/>
         <main>
             <slot />
