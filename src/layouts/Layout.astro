@@ -6,9 +6,8 @@ import BaseHead from "../components/BaseHead.astro";
 const { title, description, keywords, image} = Astro.props;
 ---
 
-<html lang="en">
+<html lang="en" transition:animate="slide">
 	<BaseHead title={title} description={description} keywords={keywords} image={image} />
-    
     <body class="bg-white dark:bg-black p-4 sm:p-0">
         <Header/>
         <main>
@@ -18,43 +17,6 @@ const { title, description, keywords, image} = Astro.props;
         <script is:inline src="/js/flowbite.min.js"></script>
     </body>
 </html>
-
-<script>
-    const suinIcon = document.querySelector(".sun");
-    const moonIcon = document.querySelector(".moon");
-    const userTheme = localStorage.getItem("theme");
-    const systemTheme = window.matchMedia("prefers-color-scheme: dark").matches;
-    const iconToggle = () => {
-        moonIcon?.classList.toggle("display-none");
-        suinIcon?.classList.toggle("display-none");
-    }
-    const themeCheck = () => {
-        if (userTheme === "dark" || (!userTheme && systemTheme)) {
-            document.documentElement.classList.add("dark");
-            moonIcon?.classList.add("display-none");
-            return;
-        }
-        suinIcon?.classList.add("display-none");
-    }
-    const themeSwitch = () => {
-        if (document.documentElement.classList.contains("dark")) {
-            document.documentElement.classList.remove("dark");
-            localStorage.setItem("theme", "light");
-            iconToggle();
-            return;
-        }
-        document.documentElement.classList.add("dark");
-        localStorage.setItem("theme", "dark");
-        iconToggle();
-    }
-    suinIcon?.addEventListener("click", () => {
-        themeSwitch();
-    });
-    moonIcon?.addEventListener("click", () => {
-        themeSwitch();
-    });
-    themeCheck();
-</script>
 
 <style is:global>
 	html {

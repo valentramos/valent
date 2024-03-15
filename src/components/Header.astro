@@ -1,47 +1,19 @@
-<nav class="bg-white dark:bg-black px-2 sm:px-4 py-1 fixed w-full z-20 top-0 left-0 border-b border-gray-200 dark:border-none">
-    <div class="container flex flex-wrap justify-between items-center mx-auto z-50">
+---
+import DarkModeToggle from "../components/DarkModeToggle.astro"
+---
+<nav
+    transition:persist
+    class="bg-white dark:bg-black px-2 sm:px-4 py-1 fixed w-full z-20 top-0 left-0 border-b border-gray-200 dark:border-none"
+>
+    <div
+        class="container flex flex-wrap justify-between items-center mx-auto z-50"
+    >
         <a href="/" class="flex items-center">
-            <img
-                src="/favicon.svg"
-                class="mr-3 h-8 sm:h-8"
-                alt="Valent Logo"
-            />
+            <img src="/favicon.svg" class="mr-3 h-8 sm:h-8" alt="Valent Logo" />
             <!-- <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">Valent</span> -->
         </a>
         <div class="flex gap-2 items-center md:order-2">
-            <button
-                type="button"
-                aria-label="Light mode"
-                class="moon text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5"
-            >
-                <svg
-                    class="w-6 h-6 text-gray-400"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                    xmlns="http://www.w3.org/2000/svg"
-                >
-                    <path
-                        d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"
-                    ></path>
-                </svg>
-            </button>
-            <button
-                type="button"
-                aria-label="Dark mode"
-                class="sun text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2"
-            >
-                <svg
-                    class="w-6 h-6 text-gray-400"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                    xmlns="http://www.w3.org/2000/svg"
-                >
-                    <path
-                        d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
-                        fill-rule="evenodd"
-                        clip-rule="evenodd"></path>
-                </svg>
-            </button>
+            <DarkModeToggle/>
             <a
                 href="https://wa.link/1uwt2q"
                 class="text-white bg-blue-500 hover:bg-blue-500 focus:ring-4 focus:outline-none focus:ring-blue-300 font-semibold rounded-full text-xs px-3 py-1.5 text-center md:mr-0"
@@ -49,10 +21,11 @@
                 Contactar
             </a>
             <button
-                data-collapse-toggle="navbar-sticky"
+                data-collapse-toggle="navbar-default"
+                id="triggerEl"
                 type="button"
                 class="inline-flex items-center p-2 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
-                aria-controls="navbar-sticky"
+                aria-controls="navbar-default"
                 aria-expanded="false"
             >
                 <span class="sr-only">Open main menu</span>
@@ -72,7 +45,8 @@
         </div>
         <div
             class="hidden justify-between items-center w-full md:flex md:w-auto md:order-1"
-            id="navbar-sticky"
+            id="targetEl"
+            transition:persist
         >
             <ul
                 class="flex flex-col mt-4 rounded-lg md:flex-row md:space-x-8 md:mt-0 text-sm md:border-0"
@@ -109,3 +83,33 @@
         </div>
     </div>
 </nav>
+
+<script>
+    const $targetEl = document.getElementById("targetEl");
+    const $triggerEl = document.getElementById("triggerEl");
+    const options = {
+        onCollapse: () => {
+            console.log("element has been collapsed");
+        },
+        onExpand: () => {
+            console.log("element has been expanded");
+        },
+        onToggle: () => {
+            console.log("element has been toggled");
+        },
+    };
+    import { Collapse } from "flowbite";
+    /*
+     * $targetEl: required
+     * $triggerEl: optional
+     * options: optional
+     */
+    const collapse = new Collapse($targetEl, $triggerEl, options);
+    collapse.expand();
+    collapse.collapse();
+    collapse.toggle();
+    document.addEventListener("astro:page-load", () => {
+        collapse.collapse();
+    });
+    document.addEventListener("astro:after-swap", collapse.expand);
+</script>

@@ -1,4 +1,6 @@
 ---
+import { ViewTransitions } from 'astro:transitions';
+
 interface Props {
     title: string;
     description: string;
@@ -41,6 +43,7 @@ const { title, description, keywords, image = "/favicon.svg" } = Astro.props;
     <meta property="twitter:image" content={new URL(image, Astro.url)} />
     <meta property="twitter:url" content={Astro.url} />
 
+    <ViewTransitions/>
     <!-- Google tag (gtag.js) -->
     <script
         type="text/partytown"
