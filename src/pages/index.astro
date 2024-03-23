@@ -1,12 +1,11 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Banner from "../components/Banner.astro";
-import faqs from "../data/faqs.json";
+import BannerSection from "../components/BannerSection.astro";
 import FaqsSection from "../components/FaqsSection.astro";
-
 import Gallery from "../components/Gallery.astro"
-import { Image } from 'astro:assets';
+import faqs from "../data/faqs.json";
 
+import { Image } from 'astro:assets';
 
 const servicio = "prototipado";
 const preguntasParaServicio = faqs[servicio];
@@ -15,11 +14,11 @@ const preguntasParaServicio = faqs[servicio];
 <Layout 
 	title="Prototipado" 
 	description="Servicios de prototipado de alta calidad para productos digitales, ayudando a transformar tus ideas en prototipos funcionales y atractivos."
-	keywords="prototipado de productos digitales, desarrollo de prototipos, diseño de productos, UX, UI"
+	keywords="prototipado de productos digitales, desarrollo de prototipos, diseño de productos, UX, UI, PM, La Paz, Bolivia"
 	image="/img/prototype/crm-kanban.png"
 >
 	
-	<Banner
+	<BannerSection
 		title="Prototipa tus Ideas"
 		subtitle="Aplicaciones móviles, sitios web, landing-pages, dashboards y más!"
 		phrase="Diseño que inspira"
