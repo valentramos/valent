@@ -1,5 +1,4 @@
 ---
-// Importa el componente para cada ítem individual
 import FaqsItem from "./FaqsItem.astro";
 
 export interface FAQSectionProps {
@@ -20,12 +19,30 @@ const { faqs } = Astro.props as FAQSectionProps;
 
     {
         faqs.map((faq) => (
-            <FaqsItem
-                key={faq.id}
-                question={faq.question}
-                answer={faq.answer}
-                id={faq.id}
-            />
+            // <FaqsItem
+            //     key={faq.id}
+            //     question={faq.question}
+            //     answer={faq.answer}
+            //     id={faq.id}
+            // />
+            <details class="open:bg-zinc-200 open:dark:bg-zinc-900 bg-zinc-100 dark:bg-zinc-900 flex items-center justify-between w-full p-5 rtl:text-right rounded-lg mb-3 focus:ring-4 focus:ring-gray-200 dark:focus:ring-zinc-800 dark:border-zinc-700 dark:text-gray-300 hover:bg-zinc-200 dark:hover:bg-zinc-800 gap-3 transition-all ease-in">
+                <summary class="p-2 flex items-center font-medium text-lg cursor-pointer">
+                    <svg
+                        class="w-5 h-5 me-2 shrink-0 text-zinc-400"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <path
+                            fill-rule="evenodd"
+                            d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z"
+                            clip-rule="evenodd"
+                        />
+                    </svg>
+                    {faq.question}
+                </summary>
+                <p class="font-medium text-md text-gray-500">{faq.answer}</p>
+            </details>
         ))
     }
 </section>
