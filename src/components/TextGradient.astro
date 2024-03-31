@@ -1,0 +1,10 @@
+---
+const { phrase, fromColor, viaColor, toColor } = Astro.props;
+---
+<h1
+    class="font-extrabold text-transparent lg:text-3xl text-2xl bg-clip-text mb-2 w-fit m-auto"
+    style={`background-image: linear-gradient(to right, ${fromColor}, ${viaColor}, ${toColor});`}
+>
+    {phrase}
+</h1>
+

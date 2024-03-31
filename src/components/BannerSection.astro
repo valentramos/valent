@@ -1,14 +1,18 @@
 ---
 import { Image } from "astro:assets";
+import TextGradient from "./TextGradient.astro";
 
 export interface BannerProps {
     title: string;
     subtitle: string;
     phrase: string;
     image: string;
+    fromColor: string;
+    viaColor: string;
+    toColor: string;
 }
 
-const { title, subtitle, phrase, image } = Astro.props as BannerProps;
+const { title, subtitle, phrase, image, fromColor, viaColor, toColor } = Astro.props as BannerProps;
 ---
 
 <section
@@ -27,18 +31,19 @@ const { title, subtitle, phrase, image } = Astro.props as BannerProps;
         >
             {subtitle}
         </p>
-        <h1
-            class="font-extrabold text-transparent lg:text-3xl text-2xl bg-clip-text bg-gradient-to-r from-[#be22ff] via-[#ff279c] to-[#ff981f] mb-2 w-fit m-auto"
-        >
-            {phrase}
-        </h1>
+        <TextGradient
+            phrase={phrase}
+            fromColor={fromColor}
+            viaColor={viaColor}
+            toColor={toColor}
+        />
         <div class="p-5">
             <Image
-            class="h-auto w-full m-auto rounded-lg animated-banner"
-            src={image}
-            alt="Banner principal de la pagina"
-            width="1280"
-            height="800"
+                class="h-auto w-full m-auto rounded-lg animated-banner"
+                src={image}
+                alt="Banner principal de la pagina"
+                width="1280"
+                height="800"
             />
         </div>
     </div>
@@ -49,21 +54,21 @@ const { title, subtitle, phrase, image } = Astro.props as BannerProps;
 </section>
 
 <style>
-	@keyframes zoom {
-		from {
-			scale: 0%;
-		}
-		to {
-			scale: 100%;
-		}
-	}
+    @keyframes zoom {
+        from {
+            scale: 0%;
+        }
+        to {
+            scale: 100%;
+        }
+    }
 
-	.animated-banner {
-		view-timeline-name: --image;
-		view-timeline-axis: block;
-		animation-timeline: --image;
-		animation-name: zoom;
-		animation-range: entry 0% cover 50%;
-		animation-fill-mode: both;
-	}
+    .animated-banner {
+        view-timeline-name: --image;
+        view-timeline-axis: block;
+        animation-timeline: --image;
+        animation-name: zoom;
+        animation-range: entry 0% cover 50%;
+        animation-fill-mode: both;
+    }
 </style>
