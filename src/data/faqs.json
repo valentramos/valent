@@ -31,6 +31,36 @@
             "answer": "Sí, los prototipos son herramientas excelentes para presentaciones y pitches, ya que permiten a los inversores y otras partes interesadas entender mejor tu concepto y visualizar el producto final."
         }
     ],
-    "productoY": [
+    "wordpress": [
+        {
+            "id": 1,
+            "question": "¿Qué es WordPress y cómo puede beneficiar a mi proyecto?",
+            "answer": "WordPress es una plataforma de gestión de contenido que te permite crear y administrar fácilmente sitios web, blogs y tiendas en línea. Puede beneficiar a tu proyecto proporcionando una solución flexible, escalable y altamente personalizable para tus necesidades de presencia en línea."
+        },
+        {
+            "id": 2,
+            "question": "¿Cuáles son las ventajas de utilizar WordPress para mi sitio web?",
+            "answer": "WordPress ofrece una amplia gama de ventajas, como una gran comunidad de usuarios y desarrolladores, una variedad de temas y plugins para personalizar tu sitio web, una interfaz fácil de usar para la gestión de contenido y una sólida base de SEO para mejorar la visibilidad en los motores de búsqueda."
+        },
+        {
+            "id": 3,
+            "question": "¿Es WordPress adecuado para mi negocio?",
+            "answer": "WordPress es adecuado para una amplia gama de negocios, desde pequeñas empresas hasta grandes corporaciones. Es especialmente útil para aquellos que desean tener control sobre su contenido y actualizar fácilmente su sitio web sin necesidad de conocimientos técnicos avanzados."
+        },
+        {
+            "id": 4,
+            "question": "¿Cuánto tiempo lleva desarrollar un sitio web con WordPress?",
+            "answer": "El tiempo de desarrollo de un sitio web con WordPress puede variar según la complejidad del proyecto y tus requisitos específicos. En general, puede tomar desde unas pocas semanas hasta varios meses. Trabajaremos contigo para establecer un cronograma que se ajuste a tus necesidades y objetivos."
+        },
+        {
+            "id": 5,
+            "question": "¿Qué tipo de soporte y mantenimiento ofrecen para los sitios web de WordPress?",
+            "answer": "Ofrecemos servicios de soporte y mantenimiento continuos para garantizar que tu sitio web de WordPress funcione sin problemas. Esto incluye actualizaciones de seguridad, copias de seguridad regulares, optimización de rendimiento y soporte técnico en caso de problemas o consultas."
+        },
+        {
+            "id": 6,
+            "question": "¿Puedo migrar mi sitio web existente a WordPress?",
+            "answer": "Sí, podemos ayudarte a migrar tu sitio web existente a WordPress de manera segura y sin problemas. Nuestro equipo de expertos se encargará de todos los detalles técnicos para garantizar una transición sin problemas y sin pérdida de datos."
+        }
     ]
 }

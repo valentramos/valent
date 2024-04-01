@@ -1,0 +1,105 @@
+---
+import Layout from "../layouts/Layout.astro";
+import BannerSection from "../components/BannerSection.astro";
+import FaqsSection from "../components/FaqsSection.astro";
+import Gallery from "../components/Gallery.astro"
+import faqs from "../data/faqs.json";
+
+import { Image } from 'astro:assets';
+
+const servicio = "wordpress";
+const preguntasParaServicio = faqs[servicio];
+---
+
+<Layout 
+	title="Wordpress" 
+	description="Servicio de desarrollo de sitios web con Wordpress para empresas corporativas, buffetes de abogados, organizaciones sin fines de lucro. Sitios web personalizados y funcionales que se adaptan a las necesidades y objetivos comerciles de tu organización. Desde el diseño visualmente atractivo hasta la optimización SEO."
+	keywords="Diseño web con WordPress, Creación de sitios web en WordPress, Diseño web personalizado, Optimización SEO en WordPress, Integración de plugins de WordPress, Servicios de diseño web freelance, Diseñador web especializado en WordPress, Sitios web responsive en WordPress, Diseño web para negocios en WordPress, Servicios de desarrollo web en WordPress, Diseño web para blogs en WordPress, Tiendas en línea con WordPress, Consultoría web en WordPress, 	Construcción de sitios web profesionales en WordPress, Diseño web y desarrollo en WordPress, Personalización de temas de WordPress, Diseño web adaptado a dispositivos móviles en WordPress, Servicios de soporte técnico para WordPress, La Paz, Bolivia"
+	image="/img/prototype/crm-kanban.png"
+>
+	
+	<BannerSection
+		title="Potencia tu presencia en línea"
+		subtitle="Maximiza tu impacto en línea y haz que tu marca se destaque!"
+		phrase="Desarrollo Wordpress"
+		fromColor="#2254ff",
+		viaColor="#2790ff",
+		toColor="#27d5ff",
+		image="/img/wordpress/banner.png"
+	/>
+
+	<section class="container mx-auto my-4 text-center">
+		<h2 class="mb-2 lg:text-2xl text-lg font-bold dark:text-white">
+			La importancia de un diseño web sólido: maximiza el impacto de tu organización.
+		</h2>
+		<a
+			href="https://www.pinterest.es/valentramos"
+			target="_blank"
+			class="inline-flex text-2xl items-center font-medium text-blue-500 hover:underline"
+		>
+			Ver portafolio
+			<svg
+				class="w-4 h-4 ms-2 rtl:rotate-180"
+				aria-hidden="true"
+				xmlns="http://www.w3.org/2000/svg"
+				fill="none"
+				viewBox="0 0 14 10"
+			>
+				<path
+					stroke="currentColor"
+					stroke-linecap="round"
+					stroke-linejoin="round"
+					stroke-width="2"
+					d="M1 5h12m0 0L9 1m4 4L9 9"></path>
+			</svg>
+		</a>
+	</section>
+
+	<section class="container mx-auto my-16">
+		<div
+			class="grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 items-center"
+		>
+			<div class="m-auto p-5 lg:p-10">
+				<Image
+					class="h-auto max-w-full rounded-md animated-img"
+					src="/img/wordpress/elementor.png"
+					alt="Captura de pantalla prototipo"
+					width={1280}
+					height={800}
+				/>
+			</div>
+			<div>
+				<h5
+					class="font-bold text-transparent text-3xl bg-clip-text bg-gradient-to-r from-[#ffd756] via-[#e2fe5c] to-[#27fdbe] mb-2 w-fit"
+				>
+					Creatividad sin Límites
+				</h5>
+				<p class="mb-3 text-gray-500 dark:text-gray-200">
+					Con Elementor PRO, el diseño y desarrollo con WordPress se convierte en un proceso ágil y sin complicaciones. Desde la concepción hasta la implementación, trabajamos con rapidez para materializar tu visión en un sitio web funcional y atractivo.
+				</p>
+				<h5
+					class="font-bold text-transparent text-3xl bg-clip-text bg-gradient-to-r from-[#05e6a9] via-[#02abd7] to-[#016ce4] mb-2 w-fit"
+				>
+					Interactividad Inigualable
+			</h5>
+				<p class="mb-3 text-gray-500 dark:text-gray-200">
+					Explora tu futuro sitio web antes de que se convierta en realidad. Con Elementor PRO, creamos diseños interactivos que te permiten experimentar la navegación y la funcionalidad de tu sitio web en tiempo real. Siente la magia de tu sitio web antes de que se complete su desarrollo.
+				</p>
+			</div>
+		</div>
+	</section>
+
+	<!-- <Gallery images={images} /> -->
+
+	<Gallery>
+		<Image src="/img/wordpress/gallery-4.png" width={1280} height={800} alt="Descripción de la imagen 1" class="h-auto max-w-full rounded-md animated-img" />
+		<Image src="/img/wordpress/gallery-2.png" width={1280} height={800} alt="Descripción de la imagen 1" class="h-auto max-w-full rounded-md animated-img" />
+		<Image src="/img/wordpress/gallery-3.png" width={1280} height={800} alt="Descripción de la imagen 1" class="h-auto max-w-full rounded-md animated-img" />
+		<Image src="/img/wordpress/gallery-1.png" width={1280} height={800} alt="Descripción de la imagen 1" class="h-auto max-w-full rounded-md animated-img" />
+		<Image src="/img/wordpress/gallery-5.png" width={1280} height={800} alt="Descripción de la imagen 1" class="h-auto max-w-full rounded-md animated-img" />
+		<Image src="/img/wordpress/gallery-6.png" width={1280} height={800} alt="Descripción de la imagen 1" class="h-auto max-w-full rounded-md animated-img" />
+	</Gallery>
+
+	<FaqsSection faqs={preguntasParaServicio} />
+
+</Layout>
