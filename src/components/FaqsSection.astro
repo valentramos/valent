@@ -17,12 +17,6 @@ const { faqs } = Astro.props as FAQSectionProps;
 
     {
         faqs.map((faq) => (
-            // <FaqsItem
-            //     key={faq.id}
-            //     question={faq.question}
-            //     answer={faq.answer}
-            //     id={faq.id}
-            // />
             <details class="open:bg-zinc-200 open:dark:bg-zinc-900 bg-zinc-100 dark:bg-zinc-900 flex items-center justify-between w-full p-5 rtl:text-right rounded-lg mb-3 focus:ring-4 focus:ring-gray-200 dark:focus:ring-zinc-800 dark:border-zinc-700 dark:text-gray-300 hover:bg-zinc-200 dark:hover:bg-zinc-800 gap-3 transition-all ease-in">
                 <summary class="p-2 flex items-center font-medium text-lg cursor-pointer">
                     <svg
